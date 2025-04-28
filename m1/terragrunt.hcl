@@ -1,5 +1,5 @@
 terraform {
-  source = "git::ssh://git@github.com/v-vlasenko/terraform-scalr-submod.git"
+  source = "git::ssh://git@github.com/v-vlasenko/aws-private.git"
 }
 
 # Include all settings from the root terragrunt.hcl file
