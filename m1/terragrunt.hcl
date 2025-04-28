@@ -1,5 +1,5 @@
 terraform {
-  source = "git::ssh://git@github.com/v-vlasenko/aws-private.git"
+  source = "git::ssh://git@github.com/v-vlasenko/terraform-aws-private-ec2.git"
 }
 
 # Include all settings from the root terragrunt.hcl file
