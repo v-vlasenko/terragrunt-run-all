@@ -1,4 +1,3 @@
-# Configure Terragrunt to automatically store tfstate files in an S3 bucket
 generate "backend" {
   path      = "backend.tf"
   if_exists = "overwrite"
@@ -12,15 +11,9 @@ EOF
 remote_state {
   backend = "s3"
   config = {
-    bucket         = "scalr-e2e-tg-test"
-    key            = "${path_relative_to_include()}/terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "test-ssh-table"
+    bucket  = "scalr-e2e-tg-test"
+    key     = "${path_relative_to_include()}/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
   }
 }
-
-# Configure root level variables that all environments can inherit
-locals {
-  # Add common variables here
-} 
