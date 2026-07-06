@@ -8,7 +8,7 @@ dependency "vpc" {
   mock_outputs = {
     vpc_param_arn = "arn:aws:ssm:us-east-1:000000000000:parameter/mock"
   }
-  mock_outputs_allowed_terraform_commands = ["plan", "validate"]
+  mock_outputs_allowed_terraform_commands = ["plan", "validate", "destroy"]
 }
 
 inputs = {
