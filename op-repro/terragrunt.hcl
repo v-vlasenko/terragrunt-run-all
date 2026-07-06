@@ -3,5 +3,5 @@ include "root" {
 }
 
 terraform {
-  source = "git::https://github.com/v-vlasenko/terragrunt-run-all.git//module-onepassword?ref=SCALRCORE-39086-custom-provider-repro"
+  source = "git::https://github.com/v-vlasenko/tg-onepassword-external-module.git//?ref=main"
 }
