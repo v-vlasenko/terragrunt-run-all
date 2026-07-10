@@ -3,3 +3,5 @@ variable "region" {
 }
 
 resource "null_resource" "m1" {}
+
+resource "null_resource" "m3" {}
