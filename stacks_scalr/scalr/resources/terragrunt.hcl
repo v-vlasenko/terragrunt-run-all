@@ -8,4 +8,9 @@ include "root" {
 # Scalr's configuration-version parser.
 terraform {
   source = "tfr://vlad2910.main.scalr.dev/aaa/repro/onepassword?version=9.9.3"
+
+  # Do NOT copy .terraform.lock.hcl back to the working dir. This leaves the
+  # agent's lock-read path empty, so providers_map has no onepassword -> tests
+  # whether Scalr then skips injecting the provider block (the customer's error).
+  copy_terraform_lock_file = false
 }
