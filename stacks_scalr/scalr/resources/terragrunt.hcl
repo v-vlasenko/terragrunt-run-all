@@ -7,5 +7,5 @@ include "root" {
 # The onepassword required_providers lives in the registry module, invisible to
 # Scalr's configuration-version parser.
 terraform {
-  source = "tfr://vlad2910.main.scalr.dev/aaa/repro/onepassword?version=9.9.0"
+  source = "tfr://vlad2910.main.scalr.dev/aaa/repro/onepassword?version=9.9.2"
 }
