@@ -2,10 +2,11 @@ include "root" {
   path = find_in_parent_folders("root.hcl")
 }
 
-# Module sourced from the Scalr module registry via tfr:// - mirrors the customer's
-# unit sourcing tfr://everyonetv.scalr.io/scalr/resources/scalr?version=0.806.1
-# The onepassword required_providers lives in the registry module, invisible to
-# Scalr's configuration-version parser.
+# Module declares onepassword in required_providers; Scalr's server-side
+# parser never follows this source, so it cannot see that requirement.
 terraform {
-  source = "tfr://vlad2910.main.scalr.dev/aaa/repro/onepassword?version=9.9.3"
+  source = "git::https://github.com/v-vlasenko/tg-onepassword-external-module.git//.?ref=v1.0.0"
+
+  # The trigger: do NOT copy the generated lock back to the unit directory.
+  copy_terraform_lock_file = false
 }
