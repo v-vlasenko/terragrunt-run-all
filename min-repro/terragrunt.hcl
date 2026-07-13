@@ -4,5 +4,5 @@ terraform {
   source = "git::https://github.com/v-vlasenko/tg-onepassword-external-module.git//.?ref=v1.0.1"
 
   # Control case: copy the lock back to the unit directory (Terragrunt default).
-  copy_terraform_lock_file = true
+  copy_terraform_lock_file = false
 }
