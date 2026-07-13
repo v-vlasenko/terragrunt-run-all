@@ -3,6 +3,6 @@
 terraform {
   source = "git::https://github.com/v-vlasenko/tg-onepassword-external-module.git//.?ref=v1.0.1"
 
-  # The trigger: do NOT copy the generated lock back to the unit directory.
-  copy_terraform_lock_file = false
+  # Control case: copy the lock back to the unit directory (Terragrunt default).
+  copy_terraform_lock_file = true
 }
