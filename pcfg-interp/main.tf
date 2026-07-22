@@ -1,14 +1,16 @@
 terraform {
   required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.0"
     }
   }
 }
 
-provider "random" {}
+provider "kubernetes" {}
 
-resource "random_id" "x" {
-  byte_length = 4
+data "kubernetes_namespace" "x" {
+  metadata {
+    name = "default"
+  }
 }
