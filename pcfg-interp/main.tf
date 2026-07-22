@@ -7,6 +7,8 @@ terraform {
   }
 }
 
+provider "random" {}
+
 resource "random_id" "x" {
   byte_length = 4
 }
