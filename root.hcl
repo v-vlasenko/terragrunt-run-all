@@ -1,11 +1,11 @@
 generate "backend" {
   path      = "backend.tf"
   if_exists = "overwrite"
-  contents = <<EOF
+  contents  = <<EOB
 terraform {
   backend "s3" {}
 }
-EOF
+EOB
 }
 
 remote_state {
