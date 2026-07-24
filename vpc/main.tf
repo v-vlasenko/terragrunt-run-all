@@ -1,5 +1,9 @@
-# No config-level default_tags block. Provider defaults (incl. default_tags)
-# come solely from the Scalr provider configuration override.
+# Provider block WITHOUT default_tags. Default tags come solely from the
+# Scalr provider configuration (managedBy=scalr.io) via its override.
+
+provider "aws" {
+  region = "us-east-1"
+}
 
 resource "aws_ssm_parameter" "vpc" {
   name  = "/scalrcore-39172/vpc-marker"
